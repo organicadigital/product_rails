@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    models:
+      product:
+        one: Produto
+        other: Produtos
+    attributes:
+      product:
+        sku: Código
+        name: Nome
+        description: Descrição
+        unity: Unidade
+        tax: Taxa
+        stock: Estoque
+        min_stock: Estoque Mínimo
+        wheight: Peso
+        enabled: Habilitado?

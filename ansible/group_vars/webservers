@@ -1,0 +1,5 @@
+---
+rvm_ruby_version: ruby-2.2.0
+rvm_ruby_gemset: product_rails
+mysql_user: productrails
+mysql_password: Product951*
