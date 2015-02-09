@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 
   extend FriendlyId
 
-  validates :sku, :name, :description, :unity, :stock, :min_stock, :wheight, presence: true
+  validates :sku, :name, :description, :unity, :stock, :min_stock, :weight, presence: true
   validates :sku, uniqueness: true
   validates :stock, :min_stock, numericality: {only_integer: true}
   validates :price, :tax, :wheight, numericality: {greater_than_or_equal_to: 0}
