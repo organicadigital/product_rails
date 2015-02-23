@@ -6,7 +6,9 @@ class Product < ActiveRecord::Base
   validates :sku, :name, :unity, :stock, :min_stock, presence: true
   validates :sku, uniqueness: true
   validates :stock, :min_stock, numericality: {only_integer: true}
-  validates :price, :tax, :weight, numericality: {greater_than_or_equal_to: 0}
+  validates :price, numericality: {greater_than_or_equal_to: 0}, allow_nil: true
+  validates :tax, numericality: {greater_than_or_equal_to: 0}, allow_nil: true
+  validates :weight, numericality: {greater_than_or_equal_to: 0}, allow_nil: true
 
   friendly_id :slug_candidates, use: [:slugged, :finders]
 
