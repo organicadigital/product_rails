@@ -13,6 +13,8 @@ class Product < ActiveRecord::Base
 
   friendly_id :slug_candidates, use: [:slugged, :finders]
 
+  scope :promotional, -> { where('promotional_price is not null and promotional_price > 0') }
+
   def slug_candidates
     [[:name, :sku]]
   end
@@ -23,6 +25,10 @@ class Product < ActiveRecord::Base
 
   def promotional_price?
     promotional_price.present? && promotional_price.to_i > 0
+  end
+
+  def promotional_discount
+    promotional_price? ? (1 - promotional_price / price) * 100 : 0
   end
 
 end
